@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: oncokb/oncokb
+    image: oncokb/oncokb:2.9.1
     ports:
       - "8080:8080"
     environment:
@@ -15,4 +15,4 @@ services:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_DATABASE=oncokb
     volumes:
-      - ./core/src/main/resources/spring/database/oncokb.sql:/docker-entrypoint-initdb.d/oncokb.sql
+      - ./oncokb.sql:/docker-entrypoint-initdb.d/oncokb.sql
