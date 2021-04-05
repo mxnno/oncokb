@@ -6,13 +6,19 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - "JAVA_OPTS=-Djdbc.driverClassName=com.mysql.jdbc.Driver -Djdbc.url=jdbc:mysql://db:3306/oncokb?useUnicode=yes&characterEncoding=UTF-8&useSSL=false -Djdbc.username=root -Djdbc.password=test"
+      - "JAVA_OPTS=-Djdbc.driverClassName=com.mysql.jdbc.Driver -Djdbc.url=jdbc:mysql://db:3306/newOncokb?useUnicode=yes&characterEncoding=UTF-8&useSSL=false -Djdbc.username=root -Djdbc.password=root"
+    depends_on:
     depends_on:
       - db
   db:
     image: mysql:5
     environment:
-      - MYSQL_ROOT_PASSWORD=test
-      - MYSQL_DATABASE=oncokb
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=newOncokb
     volumes:
       - ./oncokb.sql:/docker-entrypoint-initdb.d/oncokb.sql
+      - data:/var/lib/mysql
+
+volumes:
+  data:
+    
