@@ -57,7 +57,7 @@ public class SendEmailController {
             if (inputStream != null) {
                 prop.load(inputStream);
             } else {
-                throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
+                throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath2");
             }
             inputStream.close();
 

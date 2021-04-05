@@ -42,7 +42,7 @@ public final class PropertiesUtils {
                 if (inputStream != null) {
                     PROPERTIES.load(inputStream);
                 } else {
-                    System.out.println("property file '" + propFileName + "' not found in the classpath");
+                    System.out.println("property file '" + propFileName + "' not found in the classpath1");
                 }
                 inputStream.close();
             } catch (Exception e) {
